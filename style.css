@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 195, 130);
+}
+
+#container {
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.square {
+    border: 1px solid rgb(87, 84, 84);
+    width: 16px;
+    height: 16px;
+}
+
+.square:hover {
+    background-color: black;
+}
