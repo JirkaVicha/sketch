@@ -1,7 +1,7 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: rgb(245, 195, 130);
+    background-color: white;
 }
 
 #container {
@@ -17,6 +17,3 @@ body {
     height: 16px;
 }
 
-.square:hover {
-    background-color: black;
-}

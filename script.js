@@ -10,4 +10,30 @@ function makeBox(num) {
 
 makeBox(2624);
 
-// Create hovering over the boxes
+// Create hovering over the boxes and leave them pixelated
+const box = document.getElementsByClassName('square');
+
+function mouseOver(box) {
+    box.style.backgroundColor = makeColor();
+};
+
+function mouseOut(box) {
+    box.style.backgroundColor = makeColor();
+};
+
+
+for (let i = 0; i < box.length; i++) {
+    box[i].addEventListener('mouseover', () => mouseOver(box[i]));
+    box[i].addEventListener('mouseout', () => mouseOut(box[i]));
+};
+
+// Create random RGB color
+function makeColor() {
+    const randomColor = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+    const r = randomColor(0, 255);
+    const g = randomColor(0, 255);
+    const b = randomColor(0, 255);
+    const rgb = `rgb(${r},${g},${b})`;
+    return rgb;
+};
+
