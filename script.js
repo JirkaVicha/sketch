@@ -1,14 +1,15 @@
 
 // Create a grid, each square is 16 x 16 px of size
-function makeBox(num) {
-    for (let i = 1; i < num; i++) {
+function makeGrid(gridNumber) {
+    let gridArea = gridNumber * gridNumber;
+    for (let i = 1; i < gridArea; i++) {
         const grid = document.createElement('div');
         const container = document.getElementById('container');
         container.appendChild(grid).className = 'square';
         };
     };
 
-makeBox(1422);
+makeGrid(42);
 
 // Find every box on the page.
 const box = document.getElementsByClassName('square');
