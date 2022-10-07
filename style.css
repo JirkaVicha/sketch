@@ -38,18 +38,18 @@ body {
     justify-content:space-between;
 }
 
-.start-painting {
-    background-color: #e45b5b;
-    width: 200px;
-    height: 50px;
-    border-radius: 10px;
+.btn-reset {
+    background-color: #f60606;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
     border-style: none;
     color: white;
-    font-size: 20px;
+    font-size: 10px;
     font-weight: bold;
 }
 
-.start-painting:hover {
+.btn-reset:hover {
     background-color: #b62525;
 }
 
@@ -64,8 +64,8 @@ body {
     margin-bottom: 10px;
 }
 
-.btn-reload {
-    background-color: #868383;
+.black-paint {
+    background-color: #3f3e3e;
     width: 100px;
     height: 30px;
     border-radius: 8px;
@@ -75,6 +75,21 @@ body {
     font-weight: bold;
 }
 
-.btn-reload:hover {
-    background-color: #3f3e3e;
+.black-paint:hover {
+    background-color: #868383;
 }
+
+.btn-colors {
+    background-image: linear-gradient(red, yellow);
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border-style: none;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.btn-colors:hover {
+    background-image: linear-gradient(yellow, red);
+} 

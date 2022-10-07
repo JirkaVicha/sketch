@@ -14,14 +14,17 @@ makeBox(1422);
 const box = document.getElementsByClassName('square');
 
 // Start button to inicialized the game
-const startBtn = document.getElementsByClassName('start-painting')[0];
-startBtn.addEventListener('click', startPaint);
+const startBtn = document.getElementsByClassName('black-paint')[0];
+startBtn.addEventListener('click', blackPaint);
 
-function startPaint() {
+// Start button to inicialized color painting
+const colorBtn = document.getElementsByClassName('btn-colors')[0];
+colorBtn.addEventListener('click', paintColor);
+
+function blackPaint() {
     for (let i = 0; i < box.length; i++) {
         box[i].addEventListener('mouseover', () => mouseOver(box[i]));
         box[i].addEventListener('mouseout', () => mouseOut(box[i]));
-        box[i].addEventListener('click', () => removeFunc(box[i]));
     };
 };
 
@@ -35,6 +38,21 @@ function mouseOut(box) {
     box.style.backgroundColor = 'black'; // only one colored pen
 };
 
+function paintColor() {
+    for (let i = 0; i < box.length; i++) {
+        box[i].addEventListener('mouseover', () => colorOver(box[i]));
+        box[i].addEventListener('mouseout', () => colorOut(box[i]));
+    };
+};
+
+function colorOver(box) {
+    box.style.backgroundColor = makeColor(); // randomly changed color  
+};
+
+function colorOut(box) {
+    box.style.backgroundColor = makeColor(); // randomly changed color
+};
+
 // Create random RGB color
 function makeColor() {
     const randomColor = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
@@ -45,8 +63,10 @@ function makeColor() {
     return rgb;
 };
 
+
+
 // End painting by reload trhe page and start again
-const resetBtn = document.getElementsByClassName('btn-reload')[0];
+const resetBtn = document.getElementsByClassName('btn-reset')[0];
 resetBtn.addEventListener('click', resetPaint);
 
 function resetPaint() {
