@@ -10,17 +10,18 @@ function makeBox(num) {
 
 makeBox(1422);
 
-// Create hovering over the boxes and leave them pixelated
+// Find every box on the page.
 const box = document.getElementsByClassName('square');
 
-// Start button to inicialized the game
+// Push button to paint in black color.
 const startBtn = document.getElementsByClassName('black-paint')[0];
 startBtn.addEventListener('click', blackPaint);
 
-// Start button to inicialized color painting
+// Push button to paint in color.
 const colorBtn = document.getElementsByClassName('btn-colors')[0];
 colorBtn.addEventListener('click', paintColor);
 
+// Function for painting in black.
 function blackPaint() {
     for (let i = 0; i < box.length; i++) {
         box[i].addEventListener('mouseover', () => mouseOver(box[i]));
@@ -28,16 +29,18 @@ function blackPaint() {
     };
 };
 
+// Hover function to paint in black when mouse is over boxes. 
 function mouseOver(box) {
-    // box.style.backgroundColor = makeColor(); // randomly changed color
-    box.style.backgroundColor = 'black'; // only one colored pen
+    box.style.backgroundColor = 'black'; // only one color
 };
 
+// Hover function to paint in black when mouse is mmoving out of boxes.
 function mouseOut(box) {
-    // box.style.backgroundColor = makeColor(); // randomly changed color
-    box.style.backgroundColor = 'black'; // only one colored pen
+    box.style.backgroundColor = 'black'; // only one color
 };
 
+
+// Function to paint in color.
 function paintColor() {
     for (let i = 0; i < box.length; i++) {
         box[i].addEventListener('mouseover', () => colorOver(box[i]));
@@ -45,15 +48,17 @@ function paintColor() {
     };
 };
 
+// Hover function to paint in color when mouse is over boxes.
 function colorOver(box) {
     box.style.backgroundColor = makeColor(); // randomly changed color  
 };
 
+// Hover function to paint in color when mouse is mmoving out of boxes.
 function colorOut(box) {
     box.style.backgroundColor = makeColor(); // randomly changed color
 };
 
-// Create random RGB color
+// Creating random RGB color
 function makeColor() {
     const randomColor = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
     const r = randomColor(0, 255);
@@ -63,9 +68,7 @@ function makeColor() {
     return rgb;
 };
 
-
-
-// End painting by reload trhe page and start again
+// End painting by reload the page and make canvas empty.
 const resetBtn = document.getElementsByClassName('btn-reset')[0];
 resetBtn.addEventListener('click', resetPaint);
 
