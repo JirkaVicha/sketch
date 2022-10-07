@@ -93,3 +93,15 @@ body {
 .btn-colors:hover {
     background-image: linear-gradient(yellow, red);
 } 
+
+@media(max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+    .reload {
+        display: block;
+        text-align: center;
+    }
+}
